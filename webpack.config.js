@@ -1,4 +1,5 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const BrowserSync = require('browser-sync-webpack-plugin')
+const ExtractText = require('extract-text-webpack-plugin')
 const { join } = require('path')
 
 function abs (dest) {
@@ -6,6 +7,7 @@ function abs (dest) {
 }
 
 module.exports = {
+  stats: 'minimal',
   entry: abs('src/index.js'),
   output: {
     filename: 'app.js',
@@ -22,7 +24,7 @@ module.exports = {
       exclude: /(node_modules)/
     }, {
       test: /\.styl$/,
-      use: ExtractTextPlugin.extract({
+      use: ExtractText.extract({
         use: ['css-loader', 'stylus-loader']
       })
     }
@@ -31,6 +33,13 @@ module.exports = {
     riot: 'riot'
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractText('app.css'),
+    new BrowserSync({
+      host: 'localhost',
+      port: 1337,
+      server: { baseDir: ['.']},
+      open: false,
+      notify: false
+    })
   ]
 }

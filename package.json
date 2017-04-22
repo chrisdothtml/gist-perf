@@ -5,6 +5,8 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "riot": "^3.4.2",
@@ -15,6 +17,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "build-p": "webpack -p",
     "build-w": "webpack -w"
   }
 }
