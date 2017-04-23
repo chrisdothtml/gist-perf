@@ -14,6 +14,9 @@
     import '../gist-form/gist-form.tag'
     import './app.styl'
 
+    // use router mixin
+    this.mixin('router')
+
     this.on('mount', () => {
       this.router
         .on({
