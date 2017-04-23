@@ -4,7 +4,7 @@
 
 ## How it works
 
-For usage info, view the [docs][docs]
+For usage info, read the [docs][docs], or view this [example gist][example-gist].
 
 ## Credits
 
@@ -19,6 +19,7 @@ For usage info, view the [docs][docs]
 [MIT][license]
 
 [docs]: docs.md
+[example-gist]: https://gist.github.com/chrisdothtml/8877d7dd834f4923f2b689d034046d55
 [github-gist]: https://gist.github.com
 [jsperf]: https://github.com/jsperf/jsperf.com
 [license]: LICENSE

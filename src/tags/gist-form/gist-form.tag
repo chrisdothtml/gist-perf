@@ -3,7 +3,7 @@
 
     <form class="gist-form" action="#" autocomplete="off" onsubmit="{ onSubmit }">
       <input id="gist-id" type="text" placeholder="Enter your gist ID" oninput="{ onInput }" />
-      <button disabled="{ isDisabled }">Find</button>
+      <button disabled="{ isDisabled }">Get</button>
     </form>
 
     <a class="help-link" href="https://github.com/chrisdothtml/gist-perf/blob/master/docs.md#how-it-works" target="_blank">View the docs</a>
