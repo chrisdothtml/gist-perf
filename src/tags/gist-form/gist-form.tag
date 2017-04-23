@@ -6,7 +6,7 @@
       <button disabled="{ isDisabled }">Find</button>
     </form>
 
-    <a class="help-link" href="https://github.com/chrisdothtml/gist-perf#gist-perf">Need help?</a>
+    <a class="help-link" href="https://github.com/chrisdothtml/gist-perf/blob/master/docs.md#how-it-works" target="_blank">View the docs</a>
   </div>
 
   <script>
@@ -16,7 +16,7 @@
     this.mixin('router')
 
     onInput (event) {
-      this.isDisabled = !event.target.value
+      this.isDisabled = !event.target.value.trim()
     }
 
     onSubmit (event) {

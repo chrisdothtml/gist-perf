@@ -8,7 +8,7 @@ For usage info, view the [docs][docs]
 
 ## Credits
 
-- Github Pages (no uptime cost for gist-perf!)
+- Github Pages (no uptime cost!)
 
 - Inspired by [jsperf][jsperf]
 
