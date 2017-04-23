@@ -29,9 +29,6 @@ module.exports = {
       })
     }
   ]},
-  externals: {
-    riot: 'riot'
-  },
   plugins: [
     new ExtractText('app.css'),
     new BrowserSync({
