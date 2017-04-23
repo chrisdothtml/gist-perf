@@ -17,14 +17,14 @@
           .then(response => {
             const gist = parse(response.data)
 
-            if (gist.error) {
-              console.error(gist.error)
+            if (gist.errors.length) {
+              console.error(gist.errors)
             } else {
               console.log(gist)
             }
           })
           .catch(error => {
-            console.error('unable to get gist')
+            console.error('unable to get gist', error)
           })
       } else {
         console.error('no gist id')

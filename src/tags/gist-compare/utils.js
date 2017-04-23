@@ -1,60 +1,75 @@
 const { keys } = Object
-
-function getSetup (files) {
-  return false
+const PATTERNS = {
+  config: /^config\.json$/,
+  setup: /^setup\.js$/,
+  tests: /^test-.+\.js$/
 }
 
-function getConfig (files) {
-  const config = files['config.json']
+function validateConfig (file) {
   let result
 
-  if (config) {
-    result = JSON.parse(config.content)
-  } else {
-    result = false
+  try {
+    result = JSON.parse(file.content)
+  } catch (error) {
+    result = { error: 'invalid config file' }
   }
 
   return result
 }
 
-function getTests (files) {
-  return keys(files)
-    .filter(filename => {
-      return /^test-.+\.js$/.test(filename)
-    })
-    .map(filename => {
-      return files[filename]
-    })
+function getFileType (filename) {
+  let result = false
+
+  for (let key in PATTERNS) {
+    const pattern = PATTERNS[key]
+
+    if (pattern.test(filename)) {
+      result = key
+      break
+    }
+  }
+
+  return result
 }
 
 export function parse (gist) {
   const files = gist.files
-  const tests = getTests(files)
-  let result = {}
+  // only keep files with types
+  const validFiles = keys(files).filter(getFileType)
+  const result = {
+    config: null,
+    errors: [],
+    setup: null,
+    tests: []
+  }
 
-  if (tests.length > 1) {
-    const specialFiles = {
-      config: getConfig(files),
-      setup: getSetup(files)
-    }
+  // process files
+  validFiles.forEach(filename => {
+    const type = getFileType(filename)
+    const fileObj = files[filename]
 
-    keys(specialFiles).forEach(key => {
-      const file = specialFiles[key]
+    switch (type) {
+      case 'config':
+        const config = validateConfig(fileObj)
 
-      if (!result.error && file) {
-        if (file.error) {
-          result = { error: file.error }
+        if (config.error) {
+          result.errors.push(config.error)
         } else {
-          result[key] = file
+          result.config = config
         }
-      }
-    })
 
-    if (!result.error) {
-      result.tests = tests
+        break
+      case 'setup':
+        result.setup = fileObj
+        break
+      case 'tests':
+        result.tests.push(fileObj)
+        break
     }
-  } else {
-    result = { error: 'need at least 2 tests' }
+  })
+
+  if (result.tests.length < 2) {
+    result.errors.push('need at least 2 tests')
   }
 
   return result
