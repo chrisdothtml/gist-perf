@@ -1,5 +1,5 @@
 <app>
-  <a class="main-logo" href="#" title="Gist Perf">
+  <a class="main-logo" href="#!" title="Gist Perf">
     <span>gp</span>
   </a>
 
