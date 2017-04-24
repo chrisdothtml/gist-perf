@@ -1,6 +1,12 @@
 # How it works
 
-[Create a gist][github-gist], and add your test files to it. In this example, we'll write a performance test between the native `Array.prototype.forEach`, and a custom implementation. You can view this example gist [here][example-gist].
+The steps to using gist-perf are:
+
+1. [Create a gist][github-gist]
+2. Add your test files to it
+3. Enter its ID into http://gistperf.io
+
+Below is an example that will detail the ways to setup/configure your gist. In this example, we'll write a performance test between the native `Array.prototype.forEach`, and a custom implementation. You can view this example gist [here][example-gist].
 
 ## Tests
 
