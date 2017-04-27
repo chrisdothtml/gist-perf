@@ -29,6 +29,10 @@ module.exports = {
       })
     }
   ]},
+  externals: {
+    benchmark: 'Benchmark',
+    prism: 'Prism'
+  },
   plugins: [
     new ExtractText('app.css'),
     new BrowserSync({

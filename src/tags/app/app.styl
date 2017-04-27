@@ -27,13 +27,13 @@
 
 .content {
   background-color: #fff
-  padding: 50px
   position: absolute
   border-radius: 3px
   box-shadow: 0 8px 22px 0 rgba(0, 0, 0, .05)
 
   &:not(.content__full) {
     width: 500px
+    padding: 50px
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
@@ -55,9 +55,11 @@
   }
 
   &.content__full {
+    padding: 40px
     top: 40px
     bottom: @top
     left: 70px
     right: @left
+    overflow: auto
   }
 }

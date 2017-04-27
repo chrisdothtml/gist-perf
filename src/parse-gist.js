@@ -51,12 +51,12 @@ export default function parse (gist) {
 
     switch (type) {
       case 'config':
-        const config = validateConfig(fileObj)
+        const validation = validateConfig(fileObj)
 
-        if (config.error) {
-          result.errors.push(config.error)
+        if (validation.error) {
+          result.errors.push(validation.error)
         } else {
-          result.config = config
+          result.config = fileObj
         }
 
         break
