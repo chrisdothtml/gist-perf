@@ -32,13 +32,14 @@ function getFileType (filename) {
   return result
 }
 
-export function parse (gist) {
+export default function parse (gist) {
   const files = gist.files
   // only keep files with types
   const validFiles = keys(files).filter(getFileType)
   const result = {
     config: null,
     errors: [],
+    raw: gist,
     setup: null,
     tests: []
   }
