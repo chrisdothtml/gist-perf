@@ -4,7 +4,11 @@
 
 ## How it works
 
-For usage info, read the [docs][docs], or view the [example gist][example-gist].
+1. [Create a gist][github-gist]
+2. Add test files to it (test-*.js)
+3. Enter the gist ID into http://gistperf.io
+
+For full usage info, read the [docs][docs], or view an [example gist][example-gist].
 
 ## Credits
 
@@ -20,6 +24,7 @@ For usage info, read the [docs][docs], or view the [example gist][example-gist].
 
 [docs]: docs.md
 [example-gist]: https://gist.github.com/chrisdothtml/8877d7dd834f4923f2b689d034046d55
+[github-gist]: https://gist.github.com
 [jsperf]: https://github.com/jsperf/jsperf.com
 [license]: LICENSE
 [ui-kit]: https://dribbble.com/shots/3239377-Minimal-UI-Kit
