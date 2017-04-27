@@ -42,5 +42,9 @@ module.exports = {
       open: false,
       notify: false
     })
-  ]
+  ],
+  node: {
+    Buffer: false,
+    global: false
+  }
 }

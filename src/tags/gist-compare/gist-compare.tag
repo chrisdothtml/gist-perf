@@ -7,15 +7,15 @@
     <ul class="files">
       <li if="{ gist_info.config }">
         <h3>{ gist_info.config.filename }</h3>
-        <pre><code class="language-json"><raw content="{ gist_info.config.highlighted }" /></code></pre>
+        <pre><code class="language-json"><raw-html content="{ gist_info.config.highlighted }" /></code></pre>
       </li>
       <li if="{ gist_info.setup }">
         <h3>{ gist_info.setup.filename }</h3>
-        <pre><code class="language-javascript"><raw content="{ gist_info.setup.highlighted }" /></code></pre>
+        <pre><code class="language-javascript"><raw-html content="{ gist_info.setup.highlighted }" /></code></pre>
       </li>
       <li each="{ test in gist_info.tests }">
         <h3>{ test.filename }</h3>
-        <pre><code class="language-javascript"><raw content="{ test.highlighted }" /></code></pre>
+        <pre><code class="language-javascript"><raw-html content="{ test.highlighted }" /></code></pre>
       </li>
     </ul>
   </div>
@@ -25,7 +25,7 @@
     import * as suite from '../../benchmark-suite.js'
     import { highlightCode } from './gist-compare.js'
     import { gist_info } from '../../store/selectors.js'
-    import '../raw/raw.tag'
+    import '../raw-html/raw-html.tag'
     import './gist-compare.styl'
 
     // mixins

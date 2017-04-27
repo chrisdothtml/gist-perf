@@ -22,10 +22,8 @@ export function fetchGist (id) {
         if (gist.errors.length) {
           console.error('invalid gist', gist.errors)
         } else {
-          setTimeout(() => {
-            dispatch(updateGist({ info: gist }))
-            dispatch(updateView('compare'))
-          }, 1300)
+          dispatch(updateGist({ info: gist }))
+          dispatch(updateView('compare'))
         }
 
         dispatch(updateLoading(false))
