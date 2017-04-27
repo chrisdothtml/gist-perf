@@ -24,3 +24,40 @@
   right: 5px
   overflow: hidden
 }
+
+.content {
+  background-color: #fff
+  padding: 50px
+  position: absolute
+  border-radius: 3px
+  box-shadow: 0 8px 22px 0 rgba(0, 0, 0, .05)
+
+  &:not(.content__full) {
+    width: 500px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    .help-link {
+      margin-top: 15px
+      font-size: 12px
+      color: #3498db
+      text-decoration: none
+      position: absolute
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+
+      &:hover {
+        text-decoration: underline
+      }
+    }
+  }
+
+  &.content__full {
+    top: 40px
+    bottom: @top
+    left: 70px
+    right: @left
+  }
+}

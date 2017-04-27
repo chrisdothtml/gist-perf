@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "webpack -p",
+    "build-release": "webpack -p",
     "develop": "webpack -w"
   },
   "dependencies": {
