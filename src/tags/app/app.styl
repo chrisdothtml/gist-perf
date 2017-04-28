@@ -29,15 +29,14 @@
 
 .github-link {
   font-size: 50px
+  top: 0
   overflow: hidden
 
   @media (max-width: breakpoints.sm-max) {
-    top: 0
     right: 25px
   }
 
   @media (min-width: breakpoints.lg-min) {
-    bottom: 0
     right: 5px
   }
 }
@@ -78,15 +77,15 @@
     @media (max-width: breakpoints.sm-max) {
       padding: 30px
       top: 60px
-      bottom: 15px
-      left: @bottom
-      right: @bottom
+      bottom: 0
+      left: 15px
+      right: @left
     }
 
     @media (min-width: breakpoints.lg-min) {
       padding: 40px
       top: 40px
-      bottom: @top
+      bottom: 0
       left: 70px
       right: @left
     }
