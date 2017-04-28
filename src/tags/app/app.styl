@@ -1,3 +1,5 @@
+@import '../../_utils.styl'
+
 .main-logo,
 .github-link {
   display: block
@@ -15,14 +17,29 @@
   font-family: 'Marck Script', cursive
   font-size: 35px
   top: 0
-  left: 10px
+
+  @media (max-width: breakpoints.sm-max) {
+    left: 30px
+  }
+
+  @media (min-width: breakpoints.lg-min) {
+    left: 10px
+  }
 }
 
 .github-link {
   font-size: 50px
-  bottom: 0
-  right: 5px
   overflow: hidden
+
+  @media (max-width: breakpoints.sm-max) {
+    top: 0
+    right: 25px
+  }
+
+  @media (min-width: breakpoints.lg-min) {
+    bottom: 0
+    right: 5px
+  }
 }
 
 .content {
@@ -32,7 +49,8 @@
   box-shadow: 0 8px 22px 0 rgba(0, 0, 0, .05)
 
   &:not(.content__full) {
-    width: 500px
+    width: 100%
+    max-width: 500px
     padding: 50px
     top: 50%
     left: 50%
@@ -55,11 +73,22 @@
   }
 
   &.content__full {
-    padding: 40px
-    top: 40px
-    bottom: @top
-    left: 70px
-    right: @left
     overflow: auto
+
+    @media (max-width: breakpoints.sm-max) {
+      padding: 30px
+      top: 60px
+      bottom: 15px
+      left: @bottom
+      right: @bottom
+    }
+
+    @media (min-width: breakpoints.lg-min) {
+      padding: 40px
+      top: 40px
+      bottom: @top
+      left: 70px
+      right: @left
+    }
   }
 }

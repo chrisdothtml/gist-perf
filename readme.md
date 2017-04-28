@@ -2,7 +2,7 @@
 
 > Run Javascript performance comparisons from a Github gist
 
-## How it works
+## How to use
 
 1. [Create a gist][github-gist]
 2. Add test files to it (test-*.js)
