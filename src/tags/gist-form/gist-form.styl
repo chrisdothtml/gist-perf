@@ -26,30 +26,8 @@
 
   // TODO: loading state (just make something similar to ppled)
 
-  button {
+  .btn {
     width: 30%
-    height: 35px
-    background-color: #2ecc71
     margin: 20px auto 0
-    font-size: 13px
-    color: #fff
-    text-transform: uppercase
-    border-radius: @height
-    box-shadow: 0 4px 15px 0 rgba(@background-color, .4)
-    opacity: 1
-    transition: opacity .3s
-
-    &:not([disabled]) {
-      cursor: pointer
-
-      &:hover,
-      &:focus {
-        opacity: .9
-      }
-    }
-
-    &[disabled] {
-      opacity: .5
-    }
   }
 }

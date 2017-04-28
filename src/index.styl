@@ -23,7 +23,35 @@ body {
   color: #4b4b4b
 }
 
-.contain {
-  max-width: 1255px
-  padding: 1px 55px 0
+.btn {
+  height: 35px
+  border: 0
+  font-size: 13px
+  text-transform: uppercase
+  border-radius: @height
+  opacity: 1
+  transition: opacity .3s
+
+  &:not([disabled]) {
+    cursor: pointer
+
+    &:hover {
+      opacity: .9
+    }
+
+    &:focus {
+      opacity: .8
+      outline: 0
+    }
+  }
+
+  &[disabled] {
+    opacity: .5
+  }
+
+  &.btn__green {
+    background-color: #2ecc71
+    color: #fff
+    box-shadow: 0 4px 15px 0 rgba(@background-color, .4)
+  }
 }

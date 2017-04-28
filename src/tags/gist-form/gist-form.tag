@@ -9,7 +9,7 @@
       disabled="{ is_loading }"
     />
     <button
-      class="btn { btn__loading: is_loading }"
+      class="btn btn__green { btn__loading: is_loading }"
       disabled="{ isDisabled || is_loading }"
     >Get</button>
   </form>
