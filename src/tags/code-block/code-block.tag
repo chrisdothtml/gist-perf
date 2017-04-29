@@ -8,6 +8,7 @@
     import './code-block.styl'
 
     this.on('mount', () => {
+      // unescaped html
       this.refs.code.innerHTML = this.opts.body
     })
   </script>

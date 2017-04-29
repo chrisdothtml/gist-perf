@@ -5,7 +5,6 @@ import reducer, { initialState } from './store/reducer.js'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { mixin, mount } from 'riot'
-import './_polyfills.js'
 import './tags/app/app.tag'
 import './index.styl'
 

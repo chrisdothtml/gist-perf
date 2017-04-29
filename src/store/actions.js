@@ -1,4 +1,5 @@
 import parseGist from '../parse-gist.js'
+import { fetchJSON } from '../fetch.js'
 
 export function updateView (view) {
   return { type: 'updateView', data: { view }}
@@ -14,9 +15,8 @@ export function updateGist (data) {
 
 export function fetchGist (id) {
   return dispatch => {
-    // fetch(`https://api.github.com/gists/${id}`)
-    fetch(`/mocks/gists/${id}.json`)
-      .then(response => response.json(), error => { throw error })
+    // fetchJSON(`https://api.github.com/gists/${id}`)
+    fetchJSON(`/mocks/gists/${id}.json`)
       .then(data => {
         const gist = parseGist(data)
 
