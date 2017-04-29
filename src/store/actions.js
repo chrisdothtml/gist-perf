@@ -1,5 +1,4 @@
 import parseGist from '../parse-gist.js'
-import { get } from 'axios'
 
 export function updateView (view) {
   return { type: 'updateView', data: { view }}
@@ -15,9 +14,11 @@ export function updateGist (data) {
 
 export function fetchGist (id) {
   return dispatch => {
-    get(`https://api.github.com/gists/${id}`)
-      .then(response => {
-        const gist = parseGist(response.data)
+    // fetch(`https://api.github.com/gists/${id}`)
+    fetch(`/mocks/gists/${id}.json`)
+      .then(response => response.json(), error => { throw error })
+      .then(data => {
+        const gist = parseGist(data)
 
         if (gist.errors.length) {
           console.error('invalid gist', gist.errors)
