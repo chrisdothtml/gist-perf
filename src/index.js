@@ -19,4 +19,6 @@ const store = createStore(
 
 mixin('redux', reduxMixin(store))
 mixin('router', { router })
-mount('app')
+mount('app', {
+  inMaintenance: process.env.maintenance
+})
