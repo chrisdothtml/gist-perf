@@ -38,7 +38,7 @@
 
   <script>
     import lang from '../../lang.json'
-    import * as suite from '../../benchmark-suite.js'
+    import * as benchmark from './benchmark.js'
     import { highlightCode } from './gist-compare.js'
     import { gist_info } from '../../store/selectors.js'
     import '../code-block/code-block.tag'
@@ -55,7 +55,7 @@
       const { gist_info } = data
 
       if (gist_info) {
-        this.suite = suite.create(gist_info)
+        this.suite = benchmark.create(gist_info)
         this.update({ gist_info })
       }
     })
@@ -65,7 +65,15 @@
     })
 
     runTests () {
-      console.log('run suite')
+      this.suite
+        .on('complete', function () {
+          const fastest = this
+            .filter('fastest')
+            .map('name')
+
+          console.log(`Fastest is ${fastest}`)
+        })
+        .run()
     }
   </script>
 </gist-compare>

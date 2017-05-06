@@ -10,7 +10,7 @@ function getOptions (gist) {
   }
 
   if (gist.setup) {
-    result.setup = strToFunc(gist.setup.content)
+    result.setup = gist.setup.content
   }
 
   return result
@@ -23,7 +23,7 @@ export function create (gist) {
   gist.tests.forEach(test => {
     suite.add(
       test.filename,
-      strToFunc(test.content)
+      test.content
     )
   })
 
