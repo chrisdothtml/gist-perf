@@ -14,7 +14,7 @@
     >Get</button>
   </form>
 
-  <a class="help-link" href="https://github.com/chrisdothtml/gist-perf/blob/master/docs.md#how-it-works" target="_blank">View the docs</a>
+  <a class="help-link" href="https://github.com/chrisdothtml/gist-perf#how-to-use" target="_blank">Need help?</a>
 
   <script>
     import { fetchGist, updateLoading } from '../../store/actions.js'

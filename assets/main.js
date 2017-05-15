@@ -4996,7 +4996,7 @@ var riot = __webpack_require__(0);
 
 
 
-riot.tag2('app-form', '<form class="app-form" action="#" autocomplete="off" onsubmit="{onSubmit}"> <input id="gist-id" type="text" placeholder="Enter your gist ID" riot-value="{gist_id}" oninput="{onInput}" disabled="{is_loading}"> <button class="btn btn__green {btn__loading: is_loading}" disabled="{isDisabled || is_loading}">Get</button> </form> <a class="help-link" href="https://github.com/chrisdothtml/gist-perf/blob/master/docs.md#how-it-works" target="_blank">View the docs</a>', '', '', function (opts) {
+riot.tag2('app-form', '<form class="app-form" action="#" autocomplete="off" onsubmit="{onSubmit}"> <input id="gist-id" type="text" placeholder="Enter your gist ID" riot-value="{gist_id}" oninput="{onInput}" disabled="{is_loading}"> <button class="btn btn__green {btn__loading: is_loading}" disabled="{isDisabled || is_loading}">Get</button> </form> <a class="help-link" href="https://github.com/chrisdothtml/gist-perf#how-to-use" target="_blank">Need help?</a>', '', '', function (opts) {
   var _this = this;
 
   this.mixin('redux');
