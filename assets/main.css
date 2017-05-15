@@ -178,7 +178,7 @@
 @media (min-width: 701px) {
   .content.content__full {
     padding: 40px;
-    top: 40px;
+    top: 0;
     bottom: 0;
     left: 70px;
     right: 70px;
