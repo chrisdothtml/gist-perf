@@ -1,5 +1,5 @@
-import parseGist from '../parse-gist.js'
-import { fetchJSON } from '../fetch.js'
+import parseGist from '../utils/parse-gist.js'
+import { fetchJSON } from '../utils/fetch.js'
 
 export function updateView (view) {
   return { type: 'updateView', data: { view }}

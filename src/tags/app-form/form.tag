@@ -1,5 +1,5 @@
-<gist-form>
-  <form class="gist-form" action="#" autocomplete="off" onsubmit="{ onSubmit }">
+<app-form>
+  <form class="app-form" action="#" autocomplete="off" onsubmit="{ onSubmit }">
     <input
       id="gist-id"
       type="text"
@@ -19,7 +19,7 @@
   <script>
     import { fetchGist, updateLoading } from '../../store/actions.js'
     import { gist_id, is_loading } from '../../store/selectors.js'
-    import './gist-form.styl'
+    import './form.styl'
 
     // mixins
     this.mixin('redux')
@@ -61,4 +61,4 @@
       event.preventDefault()
     }
   </script>
-</gist-form>
+</app-form>

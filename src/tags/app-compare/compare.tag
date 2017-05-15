@@ -1,5 +1,5 @@
-<gist-compare>
-  <div class="gist-compare" if="{ !!gist_info }">
+<app-compare>
+  <div class="app-compare" if="{ !!gist_info }">
 
     <div class="compare-heading">
       <h1>{ gist_info.raw.description || lang.gist.defaults.title }</h1>
@@ -37,12 +37,12 @@
   </div>
 
   <script>
-    import lang from '../../lang.json'
+    import lang from '../../utils/lang.json'
     import * as benchmark from './benchmark.js'
-    import { highlightCode } from './gist-compare.js'
+    import { highlightCode } from './compare.js'
     import { gist_info } from '../../store/selectors.js'
     import '../code-block/code-block.tag'
-    import './gist-compare.styl'
+    import './compare.styl'
 
     // mixins
     this.mixin('redux')
@@ -76,4 +76,4 @@
         .run()
     }
   </script>
-</gist-compare>
+</app-compare>

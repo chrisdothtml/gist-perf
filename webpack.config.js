@@ -13,7 +13,7 @@ module.exports = webpackEnv => {
     stats: 'minimal',
     entry: abs('src/index.js'),
     output: {
-      filename: 'app.js',
+      filename: 'main.js',
       path: abs('assets')
     },
     module: {
@@ -39,7 +39,7 @@ module.exports = webpackEnv => {
       prism: 'Prism'
     },
     plugins: [
-      new ExtractText('app.css'),
+      new ExtractText('main.css'),
       new Define({
         // yarn <script> -- --env=m
         'process.env.maintenance': stringify(webpackEnv === 'm')
