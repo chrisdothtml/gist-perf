@@ -1,7 +1,7 @@
 const BrowserSync = require('browser-sync-webpack-plugin')
-const ExtractText = require('extract-text-webpack-plugin')
+const ExtractCSSPlugin = require('mini-css-extract-plugin')
 const { join } = require('path')
-const { DefinePlugin: Define } = require('webpack')
+const { DefinePlugin } = require('webpack')
 const { stringify } = JSON
 
 function abs (dest) {
@@ -11,9 +11,11 @@ function abs (dest) {
 module.exports = webpackEnv => {
   return {
     stats: 'minimal',
-    entry: abs('src/index.js'),
+    entry: {
+      main: abs('src/index.js')
+    },
     output: {
-      filename: 'main.js',
+      filename: '[name].js',
       path: abs('assets')
     },
     module: {
@@ -28,9 +30,11 @@ module.exports = webpackEnv => {
           exclude: /(node_modules)/
         }, {
           test: /\.styl$/,
-          use: ExtractText.extract({
-            use: ['css-loader', 'stylus-loader']
-          })
+          use: [
+            ExtractCSSPlugin.loader,
+            'css-loader',
+            'stylus-loader'
+          ]
         }
       ]
     },
@@ -39,8 +43,11 @@ module.exports = webpackEnv => {
       prism: 'Prism'
     },
     plugins: [
-      new ExtractText('main.css'),
-      new Define({
+      new ExtractCSSPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      }),
+      new DefinePlugin({
         // yarn <script> -- --env=m
         'process.env.maintenance': stringify(webpackEnv === 'm')
       }),
